@@ -1,0 +1,275 @@
+\documentclass[anonymous,sigplan,review,11pt,nonacm,natbib=false]{acmart}
+\settopmatter{printfolios=false,printccs=false,printacmref=false}
+\usepackage[maxnames=1,minnames=1,maxbibnames=100,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
+\addbibresource{main.bib}
+
+\usepackage[russian]{babel}
+
+\usepackage{debate}
+\usepackage{ffcode}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage[capitalize]{cleveref}
+\usepackage{paralist}
+\usepackage{cancel}
+\usepackage{to-be-determined}
+\usepackage{tikz}
+
+\acmBooktitle{untitled}
+\title{Strings methods analysis}
+\author{Yegor Bugayenko}
+\email{yegor256@gmail.com}
+\affiliation{Huawei\city{Moscow}\country{Russia}}
+\ccsdesc[100]{Object-Oriented Programming}
+\keywords{Object-Oriented  Programming}
+
+\begin{document}
+\raggedbottom
+
+\begin{abstract}
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+A string is an ordered set of characters. The standard library of string methods varies from language to language. Then in the case of creating a new language, you need to build your own library based on some criteria. However, the number of different functionality methods for strings that can be invented is at least countable (to put it simply - infinite). Then what to base on to identify the necessary set of methods for an object-oriented language? \hl{<- RQ}
+
+This article aims to make a multivariate analysis of different parameters of string methods.
+
+We should keep in mind that the number of string methods in different programming languages is very large, and this number can grow, as we said before, without limitations. For this reason, this article does not consider all existing methods, but only those that meet some criteria.
+
+An important factor for any method will be the frequency of its use in the code. In this article we will describe the algorithm, according to which we will evaluate this parameter. We will also investigate the accuracy of these estimates, since there is no absolutely accurate method for estimating this parameter in a reasonable amount of time.
+
+Another important parameter that is investigated in this article is the number of uses of one method, inside (for realization) the others. This criterion allows us to identify important dependencies of some methods on others.
+
+An algorithm to obtain the minimum set of required string methods will be created. This algorithm will be analyzed for susceptibility to bias, since it depends on the initial input data.
+
+Also an important parameter for methods (in this case string methods) is their running time, so this article also considers this parameter. An interesting question is: will mutable or immutable structures be considered? Since this is a complex analysis, both are considered. And also the regularities in the interrelation of mutable and nonmutable methods asymptotics are revealed.
+
+The article then discusses the results obtained and evaluates them. The accuracy of the obtained data is also evaluated. And a conclusion is made: which set of methods we took for our language.
+
+\section{Related work}
+
+Among the other publications on this topic that exist at the time of this writing, all are of an applied nature. For this reason, they are not discussed in this article. In our article, we provide data that can be used in a free form, including for creating our own string libraries.
+
+\section{Considered methods}
+
+In order to investigate methods, we have to make a list of methods to be investigated. For this purpose, programming languages such as Java, Python, C++, Ruby were chosen. They were chosen on the basis that they are quite popular, and they implement different paradigms (e.g. strict and non-strict typing in C++ and Python respectively).
+
+A table with the list of different methods from standard string libraries for these languages has been compiled. For the analysis will be selected methods, which are presented at least in two programming languages (out of four presented). Since for the methods presented only in one language, we can conclude that they are used in too special or rare cases.
+
+To avoid self-repeats, a summary list of the methods to be analyzed is presented in Section 8.
+
+\section{Popularity of methods}
+
+\subsection{Definition}
+
+Since popularity is a measurable parameter, let's calculate the number of uses of each string method (see below). Then we denote popularity as a percentage of the number of uses of a certain string method relative to the total number of uses of all string methods. This approach makes it possible to estimate the frequency of string methods usage exactly in the context of correlation with other string methods.
+
+\subsection{Search algorithm}
+
+The GitHub and Sourcegraph platforms were chosen to calculate the number of uses of the methods. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters.
+
+However, you should take into account that asking for the number of times a certain word occurs in the code in certain cases will not give a correct result, there are a number of reasons for that.
+
+\subsubsection{The word is a comment} \hl{}
+
+For some words, it is more common for them to appear in files as names/comments/inside strings rather than as called functions. Since the article deals with the use of string methods for object-oriented languages, and they use dot notation, it will be more efficient to make queries like .<method name>, instead of <method name>.
+
+\subsubsection{It's a another class method} \hl{}
+
+In this kind of analysis, for some methods there is a problem that it is not clear which class of objects has which method. For example, the contains method is present in string as well as in most collections. 
+
+Of course, it makes sense to examine the context in which the methods were used. However, this task is difficult because of the large amount of data to be analyzed.
+
+It is worth noting that methods which have had this problem are popular (note here that we mean methods for all classes, not specifically string methods), this we have obtained by making queries about the number of times they occur for code bases. For this reason, this data will not be counted in this article, but a method for solving this problem is given in the Discussion section.
+
+\section{Mutual usages}
+
+For any method (in our case string methods) you can consider such a parameter as its use by other methods. It is important because it is impossible to exclude a method from the library in case many other methods of the library use it.
+
+This parameter will be an integer numeric value that will be equal to the number of methods that can use it in their implementation (that is, it should not just be present in the implementation, but be necessary there) without affecting the asymptotics.
+
+\section{Asymptotics}
+
+\subsection{Mutable}
+
+In order to define the asymptotics of the different string methods, let us define what a string is. Since we are considering mutable strings, we consider a string to be an array of characters with which we can use write and read operations. This way we can avoid copying for every mutable operation.
+
+To understand more about the advantages of this approach: we can change any character of a string in a constant amount of time, because we won't have to copy anything. However, in order to take a substring of the string, we will have to explicitly create a new string - this is a disadvantage.
+
+\subsection{Immutable}
+
+Immutable strings impose a number of constraints on the operation. We define immutable strings as an array of characters where we are allowed to read characters in a constant time, and each mutable operation creates a new copy. We are also allowed to store a constant number of other variables, such as various flags.
+
+However, no additional restrictions are imposed, for example, in mutable operations we can refer to past versions.
+
+To better understand what advantages this approach gives: if we need to take a substring of a string, we can do it in a constant time, because due to immutability we can simply refer to characters inside the old string. However, for example, the operation to replace the last character of the string will take linear time from the length of the string.
+
+\section{Finding the minimum set}
+
+\subsection{Necessity}
+
+Even if there are various criteria for methods, it is still necessary to determine how to get a library based on them. Therefore, we propose an algorithm that can be used for various (including not yet existing) object-oriented programming languages.
+
+\subsection{Parameter setting}
+
+It is necessary to set a criterion on the basis of which a decision will be made whether to add a method to the current set of methods.
+
+As an example, consider the following criterion: a method cannot be implemented through three or less methods existing in the set, so that its asymptotics is not degraded.
+
+\subsection{Algorithm}
+
+Now specifically about the algorithm on the basis of which the final set of methods will be obtained.
+
+\begin{enumerate}
+    \item Set is initially empty.
+    \item Functions are considered in priority order, by default the most popular methods come first. If the method meets criterion 7.2, it is added to the set.
+    \item The second step is repeated until there are no unselected methods left.
+    \item In reverse order of priority the methods in the set are considered and those that don't meet criterion 7.2 are removed.
+\end{enumerate}
+
+\section{Results}
+
+Below is a table with the results - metrics.
+
+\begin{table*}[]
+    \centering
+    \begin{tabular}{|c||c|c|c|c|}
+        \hline
+         & Popularity & Mutual usages & Mutable O(?) & Immutable O(?) \\ \hline \hline
+        capitalize &  &  & 1 & 1 \\ \hline
+
+        char-at &  &  & 1 & 1 \\ \hline
+
+        compare &  &  & n & n \\ \hline
+
+        compare-ignore-case &  &  &  & \\ \hline
+
+        concatenate &  &  & n & n \\ \hline
+
+        containts &  &  & n & n \\ \hline
+
+        count &  &  &  & \\ \hline
+
+        ends-with &  &  & n & n \\ \hline
+
+        equals &  &  & n & n \\ \hline
+
+        find-first &  &  & n & n \\ \hline
+
+        find-last &  &  & n & n \\ \hline
+
+        format &  &  & n & n \\ \hline
+
+        hash &  &  & n & n \\ \hline
+
+        insert &  &  & n & n \\ \hline
+
+        is-alphabetic &  &  & n & n \\ \hline
+
+        is-empty &  &  & 1 & 1 \\ \hline
+
+        is-hexadecimal &  &  & n & n \\ \hline
+
+        is-int &  &  & n & n \\ \hline
+
+        is-lowercase &  &  & n & n \\ \hline
+
+        is-uppercase &  &  & n & n \\ \hline
+
+        is-whitespace &  &  & n & n \\ \hline
+
+        join &  &  & n & n \\ \hline
+
+        length &  &  & 1 & 1 \\ \hline
+
+        matches-regexp &  &  & n & n \\ \hline
+
+        partition &  &  & n & n \\ \hline
+
+        repeat &  &  & n & n \\ \hline
+
+        replace-all &  &  & n & n \\ \hline
+
+        replace-first  &  &  &  & \\ \hline
+
+        split &  &  & n & n \\ \hline
+
+        starts-with &  &  & n & n \\ \hline
+
+        strip &  &  & n & n \\ \hline
+
+        substring &  &  & n & 1 \\ \hline
+
+        swap-case &  &  & n & n \\ \hline
+
+        to-float &  &  & n & n \\ \hline
+
+        to-int &  &  & n & n \\ \hline
+
+        to-lowercase &  &  & n & n \\ \hline
+
+        to-uppercase &  &  & n & n \\ \hline
+
+        trim-left &  &  & n & n \\ \hline
+
+        trim-right &  &  & n & n \\ \hline
+
+        reverse &  &  & n & 1 \\ \hline
+
+        remove &  &  &  & \\ \hline
+
+        uncapitalize &  &  &  & \\ \hline
+
+        as-bytes &  &  &  & \\ \hline
+
+        chop &  &  &  & \\ \hline
+
+        clear &  &  &  & \\ \hline
+
+    \end{tabular}
+    \caption{String methods criteria}
+    \label{tab:my_label}
+\end{table*}
+
+Based on these data, we have compiled our optimal library for string methods; the included methods are listed below.
+
+\hl{todo}
+
+\section{Discussion and analysis}
+
+\subsection{Mutual usages presenting}
+
+When we counted the Mutual usages parameter we used a numerical value. However, it is worth considering that a representation in the form of an oriented dependency graph would give more applied information. Because based on this graph, it would be less biased to construct a minimal set of string methods.
+
+However, it is not possible to represent the graph in this paper because the number of its edges would be too large (of the order of the square of the number of methods). And such representation would lose any comprehensible visualization.
+
+\subsection{Problems with method intersection}
+
+Earlier we mentioned the problem with popularity calculation for methods that have the same name, but are called on objects of different classes.
+
+To solve this problem we propose to use probabilistic approach. Suppose we need to know how many times a method with name Y has been used on string. Randomly gather a sample of files where this word Y occurs. Analyze what percentage of them uses word Y as a string method. Also find out the total number of times word Y was used in the code. Multiplying the total number by the probability we will get the answer. 
+In fact, we will apply the extrapolation method.
+
+Note that this method does not show absolute accuracy; however, if the files to be analyzed are selected at random, the error decreases very much. 
+
+In order to estimate the error it is necessary to take several similar samples and compare how different the results are.
+
+\subsection{Unexpected advantage of immutability}
+
+\hl{todo}
+
+\section{Conclusion}\label{sec:conclusion}
+
+\hl{todo}
+
+\section{Used materials}
+
+\hl{todo}
+
+\printbibliography
+
+\end{document}
