@@ -40,13 +40,13 @@
 
     We should keep in mind that the number of string methods in different programming languages is very large, and this number can grow, as we said before, without limitations. For this reason, this article does not consider all existing methods, but only those that meet some criteria.
 
-    An important factor for any method will be the frequency of its use in the code. In this article we will describe the algorithm, according to which we will evaluate this parameter. We will also investigate the accuracy of these estimates, since there is no absolutely accurate method for estimating this parameter in a reasonable amount of time.
+    An important factor for any method will be the frequency of its use in the code. In this article we will describe the algorithm, according to which we will evaluate this parameter.
 
     Another important parameter that is investigated in this article is the number of uses of one method, inside (for realization) the others. This criterion allows us to identify important dependencies of some methods on others.
 
     An algorithm to obtain the minimum set of required string methods will be created. This algorithm will be analyzed for susceptibility to bias, since it depends on the initial input data.
 
-    Also an important parameter for methods (in this case string methods) is their running time, so this article also considers this parameter. An interesting question is: will mutable or immutable structures be considered? Since this is a complex analysis, both are considered. And also the regularities in the interrelation of mutable and nonmutable methods asymptotics are revealed.
+    Also an important parameter for methods (in this case string methods) is their running time, so this article also considers this parameter. Since this is a complex analysis, the asymptotics of mutable and immutable string functions will be analyzed, as well as the asymptotics under full language immutability.
 
     The article then discusses the results obtained and evaluates them. The accuracy of the obtained data is also evaluated. And a conclusion is made: which set of methods we took for our language.
 
