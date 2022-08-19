@@ -245,8 +245,7 @@
 
     Earlier we mentioned the problem with popularity calculation for methods that have the same name, but are called on objects of different classes.
 
-    To solve this problem we propose to use probabilistic approach. Suppose we need to know how many times a method with name Y has been used on string. Randomly gather a sample of files where this word Y occurs. Analyze what percentage of them uses word Y as a string method. Also find out the total number of times word Y was used in the code. Multiplying the total number by the probability we will get the answer.
-    In fact, we will apply the extrapolation method.
+    To solve this problem we can apply the extrapolation method here.
 
     Note that this method does not show absolute accuracy; however, if the files to be analyzed are selected at random, the error decreases very much.
 
