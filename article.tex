@@ -46,7 +46,9 @@
 
     Among the other publications on this topic that exist at the time of this writing, all are of an applied nature. For this reason, they are not discussed in this article. In our article, we provide data that can be used in a free form, including for creating our own string libraries.
 
-    \section{Considered functions}
+    \section{Research Method}
+
+    \subsection{Considered functions}
 
     In order to investigate functions, we have to make a list of functions to be investigated. For this purpose, programming languages such as Java, Python, C++, Ruby were chosen. They were chosen on the basis that they are quite popular, and they implement different paradigms (e.g. strict and non-strict typing in C++ and Python respectively).
 
@@ -54,13 +56,13 @@
 
     To avoid self-repeats, a summary list of the functions to be analyzed is presented in Section 8.
 
-    \section{Popularity of functions}
+    \subsection{Popularity of functions}
 
-    \subsection{Definition}
+    \subsubsection{Definition}
 
     Since popularity is a measurable parameter, let's calculate the number of uses of each string function (see below). Then we denote popularity as a percentage of the number of uses of a certain string function relative to the total number of uses of all string functions. This approach makes it possible to estimate the frequency of string functions usage exactly in the context of correlation with other string functions.
 
-    \subsection{Search algorithm}
+    \subsubsection{Search algorithm}
 
     The GitHub and Sourcegraph platforms were chosen to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters.
 
@@ -78,41 +80,41 @@
 
     It is worth noting that functions which have had this problem are popular, this we have obtained by making queries about the number of times they occur for code bases. For this reason, this data will not be counted in this article.
 
-    \section{Mutual usages}
+    \subsection{Mutual usages}
 
     For any function (in our case string functions) you can consider such a parameter as its use by other functions. It is important because it is impossible to exclude a function from the library in case many other functions of the library use it.
 
     This parameter will be an integer numeric value that will be equal to the number of functions that can use it in their implementation (that is, it should not just be present in the implementation, but be necessary there) without affecting the asymptotics.
 
-    \section{Asymptotics}
+    \subsection{Asymptotics}
 
-    \subsection{Mutable}
+    \subsubsection{Mutable}
 
     In order to define the asymptotics of the different string functions, let us define what a string is. Since we are considering mutable strings, we consider a string to be an array of characters with which we can use write and read operations. This way we can avoid copying for every mutable operation.
 
-    \subsection{Immutable}
+    \subsubsection{Immutable}
 
     Immutable strings impose a number of constraints on the operation. We define immutable strings as an array of characters where we are allowed to read characters in a constant time, and each mutable operation creates a new copy. We are also allowed to store a constant number of other variables, such as various flags.
 
-    \section{Finding the minimum set}
+    \subsection{Finding the minimum set}
 
-    \subsection{Necessity}
+    \subsubsection{Necessity}
 
     Even if there are various criteria for functions, it is still necessary to determine how to get a library based on them. Therefore, we propose an algorithm that can be used for various (including not yet existing) object-oriented programming languages.
 
-    \subsection{Parameter setting}
+    \subsubsection{Criterion setting}
 
     It is necessary to set a criterion on the basis of which a decision will be made whether to add a function to the current set of functions.
 
-    \subsection{Algorithm}
+    \subsubsection{Algorithm}
 
     Now specifically about the algorithm on the basis of which the final set of functions will be obtained.
 
     \begin{enumerate}
         \item Set is initially empty.
-        \item Functions are considered in priority order, by default the most popular functions come first. If the function meets criterion 7.2, it is added to the set.
+        \item Functions are considered in priority order, by default the most popular functions come first. If the function meets criterion 3.5.2, it is added to the set.
         \item The second step is repeated until there are no unselected functions left.
-        \item In reverse order of priority the functions in the set are considered and those that don't meet criterion 7.2 are removed.
+        \item In reverse order of priority the functions in the set are considered and those that don't meet criterion 3.5.2 are removed.
     \end{enumerate}
 
     \section{Results}
