@@ -119,7 +119,47 @@
 
     \section{Results}
 
-    Below is a table with the results - metrics.
+    Below in section \ref{table 1} is a table with the results - metrics.
+
+    Based on these data, we have compiled our optimal library for string functions; the included functions are listed below.
+
+    \hl{todo}
+
+    \section{Discussion and analysis}
+
+    \subsection{Mutual usages presenting}
+
+    When we counted the Mutual usages parameter we used a numerical value. However, it is worth considering that a representation in the form of an oriented dependency graph would give more applied information. Because based on this graph, it would be less biased to construct a minimal set of string functions.
+
+    However, it is not possible to represent the graph in this paper because the number of its edges would be too large (of the order of the square of the number of functions). And such representation would lose any comprehensible visualization.
+
+    \subsection{Problems with function intersection}
+
+    Earlier we mentioned the problem with popularity calculation for functions that have the same name, but are called on objects of different classes.
+
+    To solve this problem we can apply the extrapolation function here.
+
+    Note that this function does not show absolute accuracy; however, if the files to be analyzed are selected at random, the error decreases very much.
+
+    In order to estimate the error it is necessary to take several similar samples and compare how different the results are.
+
+    \subsection{Unexpected advantage of immutability}
+
+    An interesting fact was that, judging by the popularity of the use, the immutable methods are superior to the mutable ones.
+
+    \section{Conclusion}\label{sec:conclusion}
+
+    \hl{todo}
+
+    \section{Used materials}
+
+    https://yegor256.github.io/plum/
+
+    \hl{todo}
+
+    \section{Appendices}
+
+    \label{table 1}
 
     \begin{table*}[]
         \centering
@@ -222,42 +262,6 @@
         \caption{String functions criteria}
         \label{tab:my_label}
     \end{table*}
-
-    Based on these data, we have compiled our optimal library for string functions; the included functions are listed below.
-
-    \hl{todo}
-
-    \section{Discussion and analysis}
-
-    \subsection{Mutual usages presenting}
-
-    When we counted the Mutual usages parameter we used a numerical value. However, it is worth considering that a representation in the form of an oriented dependency graph would give more applied information. Because based on this graph, it would be less biased to construct a minimal set of string functions.
-
-    However, it is not possible to represent the graph in this paper because the number of its edges would be too large (of the order of the square of the number of functions). And such representation would lose any comprehensible visualization.
-
-    \subsection{Problems with function intersection}
-
-    Earlier we mentioned the problem with popularity calculation for functions that have the same name, but are called on objects of different classes.
-
-    To solve this problem we can apply the extrapolation function here.
-
-    Note that this function does not show absolute accuracy; however, if the files to be analyzed are selected at random, the error decreases very much.
-
-    In order to estimate the error it is necessary to take several similar samples and compare how different the results are.
-
-    \subsection{Unexpected advantage of immutability}
-
-    An interesting fact was that, judging by the popularity of the use, the immutable methods are superior to the mutable ones.
-
-    \section{Conclusion}\label{sec:conclusion}
-
-    \hl{todo}
-
-    \section{Used materials}
-
-    https://yegor256.github.io/plum/
-
-    \hl{todo}
 
     \printbibliography
 
