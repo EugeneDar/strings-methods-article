@@ -1,10 +1,10 @@
 \documentclass[anonymous,sigplan,review,11pt,nonacm,natbib=false]{acmart}
 \settopmatter{printfolios=false,printccs=false,printacmref=false}
 \usepackage[maxnames=1,minnames=1,maxbibnames=100,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
-\addbibresource{main.bib}
 
 \usepackage[russian]{babel}
 
+\usepackage{rotating}
 \usepackage{debate}
 \usepackage{ffcode}
 \usepackage{mathtools}
@@ -222,6 +222,8 @@
 
             clear &  &  &  & \\ \hline
 
+% \begin{sideways} \end{sideways}
+
         \end{tabular}
         \caption{String functions criteria}
         \label{tab:my_label}
@@ -251,7 +253,7 @@
 
     \subsection{Unexpected advantage of immutability}
 
-    \hl{todo}
+    An interesting fact was that, judging by the popularity of the use, the immutable methods are superior to the mutable ones.
 
     \section{Conclusion}\label{sec:conclusion}
 
