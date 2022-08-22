@@ -54,7 +54,7 @@
 
     A table with the list of different functions from standard string libraries for these languages has been compiled. For the analysis will be selected functions, which are presented at least in two programming languages (out of four presented). Since for the functions presented only in one language, we can conclude that they are used in too special or rare cases.
 
-    To avoid self-repeats, a summary list of the functions to be analyzed is presented in Section 8.
+    To avoid self-repeats, a summary list of the functions to be analyzed is presented in section \ref{table 1}.
 
     \subsection{Popularity of functions}
 
@@ -104,6 +104,8 @@
 
     \subsubsection{Criterion setting}
 
+    \label{criterion}
+
     It is necessary to set a criterion on the basis of which a decision will be made whether to add a function to the current set of functions.
 
     \subsubsection{Algorithm}
@@ -112,9 +114,9 @@
 
     \begin{enumerate}
         \item Set is initially empty.
-        \item Functions are considered in priority order, by default the most popular functions come first. If the function meets criterion 3.5.2, it is added to the set.
+        \item Functions are considered in priority order, by default the most popular functions come first. If the function meets criterion \ref{criterion}, it is added to the set.
         \item The second step is repeated until there are no unselected functions left.
-        \item In reverse order of priority the functions in the set are considered and those that don't meet criterion 3.5.2 are removed.
+        \item In reverse order of priority the functions in the set are considered and those that don't meet criterion \ref{criterion} are removed.
     \end{enumerate}
 
     \section{Results}
@@ -151,7 +153,11 @@
 
     \hl{todo}
 
-    \section{Used materials}
+    \section{Acknowledgements}
+
+    The research was funded by Huawei Technologies Co. Ltd.
+
+    \section{References}
 
     https://yegor256.github.io/plum/
 
