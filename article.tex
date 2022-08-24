@@ -34,7 +34,7 @@
 
     \section{Introduction}\label{sec:intro}
 
-    A string is an ordered set of characters. The standard library of string functions varies from language to language. Then in the case of creating a new language, you need to build your own library based on some criteria. However, the number of different functionality functions for strings that can be invented is at least countable (to put it simply - infinite). Then what to base on to identify the necessary set of functions for an object-oriented language? \hl{<- RQ}
+    A string is an ordered set of characters. The standard library of string functions varies from language to language. When creating a new language, one needs to build their own library based on some criteria. However, the number of different functionality functions for strings that can be invented is at least countable (to put it simply - infinite). Then what to base on to identify the necessary set of functions for an object-oriented language? \hl{<- RQ}
 
     Most programming languages add functions to their string libraries without any limit on the number, for this reason there is no such research on this topic at the moment.
 
@@ -44,15 +44,17 @@
 
     Among the other publications on this topic that exist at the time of this writing, all are of an applied nature. For this reason, they are not discussed in this article. In our article, we provide data that can be used in a free form, including for creating our own string libraries.
 
-    \section{Research Method}
+    \hl{add Section Metrics}
+
+    \section{Metrics}
 
     \subsection{Considered functions}
 
-    In order to investigate functions, we have to make a list of functions to be investigated. For this purpose, programming languages such as Java, Python, C++, Ruby, JavaScript, Go, C\#, Swift, PHP, Rust were chosen. They were chosen based on parameters such as the number of questions on StackOverflow, the number of repositories on GitHub with 100+ stars, and the TIOBE Index; and they implement different paradigms (e.g. strict and non-strict typing in C++ and Python respectively).
+    In order to investigate functions, we have to make a list of functions to be investigated. For this purpose, programming languages such as Java, Python, C++, Ruby, JavaScript, Go, C\#, Swift, PHP, Rust were chosen. They were chosen based on parameters such as the number of questions on StackOverflow, the number of repositories on GitHub with 100+ stars, and the TIOBE Index; and they implement different paradigms (e.g. strict and non-strict typing in C++ and Python respectively). \hl{move langs to results, add some part of bench table}
 
     We should keep in mind that the number of string functions in different programming languages is very large, and this number can grow, as we said before, without limitations. For this reason, this article does not consider all existing functions, but only those that meet some criteria.
 
-    A table with the list of different functions from standard string libraries for these languages has been compiled. For the analysis will be selected functions, which are presented at least in three programming languages (out of ten presented). Since for the functions presented only in one-two language, we can conclude that they are used in too special or rare cases.
+    A table with the list of different functions from standard string libraries for these languages has been compiled. For the analysis will be selected functions, which are presented at least in three programming languages (out of ten presented). Since for the functions presented only in one-two language, we can conclude that they are used in too special or rare cases. \hl{using N, not 10}
 
     To avoid self-repeats, a summary list of the functions to be analyzed is presented in section \ref{table 1}.
 
@@ -60,11 +62,11 @@
 
     \subsubsection{Definition}
 
-    Since popularity is a measurable parameter, let's calculate the number of uses of each string function (see below). Then we denote popularity as a percentage of the number of uses of a certain string function relative to the total number of uses of all string functions. This approach makes it possible to estimate the frequency of string functions usage exactly in the context of correlation with other string functions.
+    Since popularity is a measurable parameter, let's calculate the number of uses of each string function (see below). Then we denote popularity as a percentage of the number of uses of a certain string function relative to the total number of uses of all string functions. This approach makes it possible to estimate the frequency of string functions usage exactly in the context of correlation with other string functions. \hl{remove all LET'S and YOU}
 
     \subsubsection{Search algorithm}
 
-    The GitHub and Sourcegraph platforms were chosen to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters.
+    The GitHub and Sourcegraph platforms we choose to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters.
 
     However, you should take into account that asking for the number of times a certain word occurs in the code in certain cases will not give a correct result, there are a number of reasons for that.
 
@@ -121,7 +123,7 @@
 
     \section{Results}
 
-    Below in section \ref{table 1} is a table with the results - metrics.
+    Below in section \ref{table 1} is a table with the results - metrics. It is important to note that these results take into account the methods of languages from their standard libraries.
 
     Based on these data, we have compiled our optimal library for string functions; the included functions are listed below.
 
@@ -159,9 +161,11 @@
 
     \section{References}
 
-    https://yegor256.github.io/plum/
+    https://yegor256.github.io/plum
 
-    \hl{todo}
+    https://github.com/search
+
+    https://sourcegraph.com/search
 
     \section{Appendices}
 
