@@ -173,9 +173,8 @@
 
     \label{table 1}
 
-    \begin{table*}[]
-        \centering
-        \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \begin{table}
+        \begin{tabular}{lllllllllllllll}
             \hline
             & \begin{sideways}Java\end{sideways}
             & \begin{sideways}Ruby\end{sideways}
@@ -191,101 +190,99 @@
             & \begin{sideways}Mutual usages\end{sideways}
             & \begin{sideways}Mutable O(?)\end{sideways}
             & \begin{sideways}Immutable O(?)\end{sideways}
-            \\ \hline \hline
-            capitalize &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\ \hline
+            \\ \hline
 
-            char-at &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\ \hline
+            capitalize &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
 
-            compare &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            char-at &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
 
-            compare-ignore-case &  &  &  &  &  &  &  &  &  &  &  &  &  & \\ \hline
+            compare &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            concatenate &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            compare-ignore-case &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
 
-            containts &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            concatenate &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            count &  &  &  &  &  &  &  &  &  &  &  &  &  & \\ \hline
+            containts &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            ends-with &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            count &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
 
-            equals &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            ends-with &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            find-first &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            equals &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            find-last &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            find-first &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            format &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            find-last &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            hash &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            format &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            insert &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            hash &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            is-alphabetic &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            insert &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            is-empty &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\ \hline
+            is-alphabetic &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            is-hexadecimal &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            is-empty &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
 
-            is-int &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            is-hexadecimal &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            is-lowercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            is-int &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            is-uppercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            is-lowercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            is-whitespace &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            is-uppercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            join &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            is-whitespace &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            length &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\ \hline
+            join &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            matches-regexp &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            length &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
 
-            partition &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            matches-regexp &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            repeat &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            partition &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            replace-all &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            repeat &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            replace-first &  &  &  &  &  &  &  &  &  &   &  &  &  & \\ \hline
+            replace-all &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            split &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            replace-first &  &  &  &  &  &  &  &  &  &   &  &  &  & \\
 
-            starts-with &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            split &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            strip &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            starts-with &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            substring &  &  &  &  &  &  &  &  &  &  &  &  & n & 1 \\ \hline
+            strip &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            swap-case &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            substring &  &  &  &  &  &  &  &  &  &  &  &  & n & 1 \\
 
-            to-float &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            swap-case &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            to-int &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            to-float &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            to-lowercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            to-int &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            to-uppercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            to-lowercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            trim-left &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            to-uppercase &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            trim-right &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\ \hline
+            trim-left &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            reverse &  &  &  &  &  &  &  &  &  &  &  &  & n & 1 \\ \hline
+            trim-right &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
-            remove &  &  &  &  &  &  &  &  &  &  &  &  &  & \\ \hline
+            reverse &  &  &  &  &  &  &  &  &  &  &  &  & n & 1 \\
 
-            uncapitalize &  &  &  &  &  &  &  &  &  &  &  &  &  & \\ \hline
+            remove &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
 
-            as-bytes &  &  &  &  &  &  &  &  &  &  &  &  &  & \\ \hline
+            uncapitalize &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+
+            as-bytes &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
 
             chop &  &  &  &  &  &  &  &  &  &  &  &  &  & \\ \hline
-
-% \begin{sideways} \end{sideways}
-
         \end{tabular}
         \caption{String functions criteria}
         \label{tab:my_label}
-    \end{table*}
+    \end{table}
 
     \printbibliography
 
