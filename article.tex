@@ -2,8 +2,6 @@
 \settopmatter{printfolios=false,printccs=false,printacmref=false}
 \usepackage[maxnames=1,minnames=1,maxbibnames=100,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 
-\usepackage[russian]{babel}
-
 \usepackage{rotating}
 \usepackage{debate}
 \usepackage{ffcode}
@@ -124,6 +122,24 @@
     \section{Results}
 
     After considering the criteria, we chose 10 programming languages. Languages such as Java, Python, C++, Ruby, JavaScript, Go, C\#, Swift, PHP, Rust were chosen.
+
+
+    \begin{table}[h]
+        \begin{tabular}{llll}
+            \hline
+            & Questions
+            & Repositories 100+ stars
+            & TIOBE
+            \\ \hline
+
+            Python & 1911498 & 39308 & 1 \\
+
+            Java & 1833680 & 20216 & 3 \\
+
+            C++ & 758054 & 13609 & 4 \\ \hline
+        \end{tabular}
+        \caption{Part of the language criteria table}
+    \end{table}
 
     Below in section \ref{table 1} is a table with the results - metrics. It is important to note that these results take into account the methods of languages from their standard libraries.
 
