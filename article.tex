@@ -60,19 +60,17 @@
 
     \subsubsection{Definition}
 
-    Since popularity is a measurable parameter, let's calculate the number of uses of each string function (see below). Then we denote popularity as a percentage of the number of uses of a certain string function relative to the total number of uses of all string functions. This approach makes it possible to estimate the frequency of string functions usage exactly in the context of correlation with other string functions. \hl{remove all LET'S and YOU}
+    Since popularity is a measurable parameter, we calculated the number of uses of each string function (see below). Then we denote popularity as a percentage of the number of uses of a certain string function relative to the total number of uses of all string functions. This approach makes it possible to estimate the frequency of string functions usage exactly in the context of correlation with other string functions.
 
     \subsubsection{Search algorithm}
 
-    The GitHub and Sourcegraph platforms we choose to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters.
+    The GitHub and Sourcegraph platforms we choose to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters. However, we should keep in mind that asking for the number of repetitions of a certain word in the code will in some cases not give the right result, for a number of reasons.
 
-    However, you should take into account that asking for the number of times a certain word occurs in the code in certain cases will not give a correct result, there are a number of reasons for that.
-
-    \subsubsection{The word is a comment} \hl{}
+    \subsubsection{The word is a comment}
 
     For some words, it is more common for them to appear in files as names/comments/inside strings rather than as called functions. Since the article deals with the use of string functions for object-oriented languages, and they use dot notation, it will be more efficient to make queries like .<function name>, instead of <function name>.
 
-    \subsubsection{It's a another class function} \hl{}
+    \subsubsection{It's a another class function}
 
     In this kind of analysis, for some functions there is a problem that it is not clear which class of objects has which function. For example, the contains function is present in string as well as in most collections.
 
@@ -82,7 +80,7 @@
 
     \subsection{Mutual usages}
 
-    For any function (in our case string functions) you can consider such a parameter as its use by other functions. It is important because it is impossible to exclude a function from the library in case many other functions of the library use it.
+    For any function (in our case string functions) we can consider such a parameter as its use by other functions. It is important because it is impossible to exclude a function from the library in case many other functions of the library use it.
 
     This parameter will be an integer numeric value that will be equal to the number of functions that can use it in their implementation (that is, it should not just be present in the implementation, but be necessary there) without affecting the asymptotics.
 
@@ -90,7 +88,7 @@
 
     \subsubsection{Mutable}
 
-    In order to define the asymptotics of the different string functions, let us define what a string is. Since we are considering mutable strings, we consider a string to be an array of characters with which we can use write and read operations. This way we can avoid copying for every mutable operation.
+    In order to define the asymptotics of the different string functions, we need to define what a string is. Since we are considering mutable strings, we consider a string to be an array of characters with which we can use write and read operations. This way we can avoid copying for every mutable operation.
 
     \subsubsection{Immutable}
 
