@@ -42,19 +42,7 @@
 
     Among the other publications on this topic that exist at the time of this writing, all are of an applied nature. For this reason, they are not discussed in this article. In our article, we provide data that can be used in a free form, including for creating our own string libraries.
 
-    \hl{add Section Metrics}
-
     \section{Metrics}
-
-    \subsection{Considered functions}
-
-    In order to investigate functions, we have to make a list of functions to be investigated. We chose N languages. They were chosen based on parameters such as the number of questions on StackOverflow, the number of repositories on GitHub with 100+ stars, and the TIOBE Index; and they implement different paradigms (e.g. strict and non-strict typing). \hl{add some part of bench table}
-
-    We should keep in mind that the number of string functions in different programming languages is very large, and this number can grow, as we said before, without limitations. For this reason, this article does not consider all existing functions, but only those that meet some criteria.
-
-    A table with the list of different functions from standard string libraries for these languages has been compiled. For the analysis will be selected functions, which are presented at least in 30 percent of programming languages (out of N presented). Since for the functions presented less than 30 percent language, we can conclude that they are used in too special or rare cases.
-
-    To avoid self-repeats, a summary list of the functions to be analyzed is presented in section \ref{table 1}.
 
     \subsection{Popularity of functions}
 
@@ -64,7 +52,7 @@
 
     \subsubsection{Search algorithm}
 
-    The GitHub and Sourcegraph platforms we choose to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters. However, we should keep in mind that asking for the number of repetitions of a certain word in the code will in some cases not give the right result, for a number of reasons.
+    The GitHub and Sourcegraph platforms we choose to calculate the number of uses of the functions. This platform provides the ability to search for any words or phrases in all GitHub projects, as well as if necessary to specify other parameters. However, we should keep in mind that asking for the number of repetitions of a certain word in the code will in some cases not give the right result, for a number of reasons. \hl{maybe move platforms names to Method Section}
 
     \subsubsection{The word is a comment}
 
@@ -94,7 +82,7 @@
 
     Immutable strings impose a number of constraints on the operation. We define immutable strings as an array of characters where we are allowed to read characters in a constant time, and each mutable operation creates a new copy. We are also allowed to store a constant number of other variables, such as various flags.
 
-    \subsection{Finding the minimum set}
+    \subsection{The minimum set}
 
     \subsubsection{Necessity}
 
@@ -116,6 +104,20 @@
         \item The second step is repeated until there are no unselected functions left.
         \item In reverse order of priority the functions in the set are considered and those that don't meet criterion \ref{criterion} are removed.
     \end{enumerate}
+
+    \hl{maybe move algorithm to Section method}
+
+    \section{Method}
+
+    \subsection{Considered functions}
+
+    In order to investigate functions, we have to make a list of functions to be investigated. We chose N languages. They were chosen based on parameters such as the number of questions on StackOverflow, the number of repositories on GitHub with 100+ stars, and the TIOBE Index; and they implement different paradigms (e.g. strict and non-strict typing).
+
+    We should keep in mind that the number of string functions in different programming languages is very large, and this number can grow, as we said before, without limitations. For this reason, this article does not consider all existing functions, but only those that meet some criteria.
+
+    A table with the list of different functions from standard string libraries for these languages has been compiled. For the analysis will be selected functions, which are presented at least in 30 percent of programming languages (out of N presented). Since for the functions presented less than 30 percent language, we can conclude that they are used in too special or rare cases.
+
+    To avoid self-repeats, a summary list of the functions to be analyzed is presented in section \ref{table 1}.
 
     \section{Results}
 
