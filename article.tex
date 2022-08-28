@@ -4,6 +4,7 @@
 
 \usepackage{rotating}
 \usepackage{debate}
+\usepackage{tabularx}
 \usepackage{ffcode}
 \usepackage{mathtools}
 \usepackage{amsmath}
@@ -56,19 +57,19 @@
 
     \subsubsection{The word is a comment}
 
-    For some words, it is more common for them to appear in files as names/comments/inside strings rather than as called functions. Since the article deals with the use of string functions for object-oriented languages, and they use dot notation, it will be more efficient to make queries like .<function name>, instead of <function name>.
+    For some words, it is more common for them to appear in files as names/comments/inside strings rather than as called functions. Since the article deals with the use of string functions for object-oriented languages, and they use dot notation, it will be more efficient to make queries like \textit{.function}, instead of \textit{function}. \hl{to discussion}
 
     \subsubsection{It's a another class function}
 
-    In this kind of analysis, for some functions there is a problem that it is not clear which class of objects has which function. For example, the contains function is present in string as well as in most collections.
+    In this kind of analysis, for some functions there is a problem that it is not clear which class of objects has which function. For example, the \textit{contains} function is present in string as well as in most collections.
 
     Of course, it makes sense to examine the context in which the functions were used. However, this task is difficult because of the large amount of data to be analyzed.
 
-    It is worth noting that functions which have had this problem are popular, this we have obtained by making queries about the number of times they occur for code bases. For this reason, this data will not be counted in this article.
+    It is worth noting that functions which have had this problem are popular, this we have obtained by making queries about the number of times they occur for code bases. For this reason, this data will not be counted in this article. \hl{to discussion}
 
     \subsection{Mutual usages}
 
-    For any function (in our case string functions) we can consider such a parameter as its use by other functions. It is important because it is impossible to exclude a function from the library in case many other functions of the library use it.
+    For any function we can consider such a parameter as its use by other functions. It is important because it is impossible to exclude a function from the library in case many other functions of the library use it.
 
     This parameter will be an integer numeric value that will be equal to the number of functions that can use it in their implementation (that is, it should not just be present in the implementation, but be necessary there) without affecting the asymptotics.
 
@@ -109,19 +110,18 @@
 
     \section{Method}
 
-    \subsection{Considered functions}
-
-    In order to investigate functions, we have to make a list of functions to be investigated. We chose N languages. They were chosen based on parameters such as the number of questions on StackOverflow, the number of repositories on GitHub with 100+ stars, and the TIOBE Index; and they implement different paradigms (e.g. strict and non-strict typing).
-
+    In order to investigate functions, we will make a list of functions to be investigated. We will choose N languages. They were chosen based on parameters such as the number of questions on StackOverflow, the number of repositories on GitHub with 100+ stars, and the TIOBE Index; and they implement different paradigms (e.g. strict and non-strict typing).
     We should keep in mind that the number of string functions in different programming languages is very large, and this number can grow, as we said before, without limitations. For this reason, this article does not consider all existing functions, but only those that meet some criteria.
 
     A table with the list of different functions from standard string libraries for these languages has been compiled. For the analysis will be selected functions, which are presented at least in 30 percent of programming languages (out of N presented). Since for the functions presented less than 30 percent language, we can conclude that they are used in too special or rare cases.
 
-    To avoid self-repeats, a summary list of the functions to be analyzed is presented in section \ref{table 1}.
+
 
     \section{Results}
 
-    After considering the criteria, we chose 10 programming languages. Languages such as Java, Python, C++, Ruby, JavaScript, Go, C\#, Swift, PHP, Rust were chosen.
+    Below are the 10 programming languages we have chosen and their criteria.
+
+    \hl{Java, Python, C++, Ruby, JavaScript, Go, C\#, Swift, PHP, Rust were chosen.}
 
 
     \begin{table}[h]
@@ -210,7 +210,7 @@
 
             capitalize &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
 
-            char-at &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
+            Get \textbf{char-at} a given position &  &  &  &  &  &  &  &  &  &  &  &  & 1 & 1 \\
 
             compare &  &  &  &  &  &  &  &  &  &  &  &  & n & n \\
 
