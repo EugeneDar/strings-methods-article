@@ -186,6 +186,32 @@
 
     \section{Appendices}
 
+    \hl{todo String function metrics table}
+
+    Below we have a list of all string functions from the standard libraries of the specified languages.
+
+    \textbf{Java}: charAt, codePointAt, codePointBefore, codePointCount, compareTo, compareToIgnoreCase, concat, contains, contentEquals, copyValueOf, endsWith, equals, equalsIgnoreCase, format, getBytes, getChars, hashCode, indexOf, intern, isEmpty, length, lastIndexOf, length, matches, offsetByCodePoints, regionMatches, replace, replaceAll, replaceFirst, split, startsWith, subSequence, substring, toCharArray, toLowerCase, toString, toUpperCase, trim, valueOf.
+
+    \textbf{Ruby}: new, try\_convert, \%, *, +, +@, -@, <<, <=>, ==, ===, =\~, [], []=, ascii\_only?, b, bytes, bytesize, byteslice, capitalize, capitalize!, casecmp, casecmp?, center, chars, chomp, chomp!, chop, chop!, chr, clear, codepoints, concat, count, crypt, delete, delete!, delete\_prefix, delete\_prefix!, delete\_suffix, delete\_suffix!, downcase, downcase!, dump, each\_byte, each\_char, each\_codepoint, \\ each\_grapheme\_cluster, each\_line, empty?, encode, encode!, encoding, end\_with?, eql?, force\_encoding, freeze, getbyte, grapheme\_clusters, gsub, gsub!, hash, hex, include?, index, initialize\_copy, insert, inspect, intern, length, lines, ljust, lstrip, lstrip!, match, match?, next, next!, oct, ord, partition, prepend, replace, reverse, reverse!, rindex, rjust, rpartition, rstrip, rstrip!, scan, scrub, scrub!, setbyte, size, slice, slice!, split, squeeze, squeeze!, start\_with?, strip, strip!, sub, sub!, succ, succ!, sum, swapcase, swapcase!, to\_c, to\_f, to\_i, to\_r, to\_s, to\_str, to\_sym, tr, tr!, tr\_s, tr\_s!, undump, unicode\_normalize, unicode\_normalize!, unicode\_normalized?, unpack, unpack1, upcase, upcase!, upto, valid\_encoding?.
+
+    \textbf{Python}: capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, format\_map, index, isalnum, isalpha, isascii, isdecimal, isdigit, isidentifier, islower, isnumeric, isprintable, isspace, istitle, isupper, join, ljust, lower, lstrip, maketrans, partition, replace, rfind, rindex, rjust, rpartition, rsplit, rstrip, split, splitlines, startswith, strip, swapcase, title, translate, upper, zfill.
+
+    \textbf{C++}: append, assign, at, back, begin, c\_str, capacity, cbegin, cend, clear, compare, copy, crbegin, crend, data, empty, end, erase, find, find\_first\_not\_of, find\_first\_of, find\_last\_not\_of, find\_last\_of, front, get\_allocator, insert, length, max\_size, operator[], operator+=, operator=, pop\_back, push\_back, rbegin, rend, replace, reserve, resize, rfind, shrink\_to\_fit, size, substr, swap.
+
+    \textbf{JavaScript}: charAt, charCodeAt, codePointAt, concat, constructor, endsWith, fromCharCode, includes, indexOf, lastIndexOf, length, localeCompare, match, prototype, repeat, replace, search, slice, split, startsWith, substr, substring, toLocaleLowerCase, toLocaleUpperCase, toLowerCase, toString, toUpperCase, trim, valueOf.
+
+    \textbf{Go}: Clone, Compare, Contains, ContainsAny, ContainsRune, Count, Cut, EqualFold, Fields, FieldsFunc, func, HasPrefix, HasSuffix, Index, IndexAny, IndexByte, IndexFunc, func, IndexRune, Join, LastIndex, LastIndexAny, LastIndexByte, LastIndexFunc, func, Map, func, Repeat, Replace, ReplaceAll, Split, SplitAfter, SplitAfterN, SplitN, Title, ToLower, ToLowerSpecial, ToTitle, ToTitleSpecial, ToUpper, ToUpperSpecial, ToValidUTF8, Trim, TrimFunc, func, TrimLeft, TrimLeftFunc, func, TrimPrefix, TrimRight, TrimRightFunc, func, TrimSpace, TrimSuffix.
+
+    \textbf{C\#}:
+
+    Clone, CompareTo, Contains, EndsWith, Equals, GetHashCode, GetType, GetTypeCode, IndexOf, ToLower, ToUpper, Insert, IsNormalized, LastIndexOf, Remove, Replace, Split, StartsWith, Substring, ToCharArray, Trim.
+
+    \textbf{Swift}:
+
+    \textbf{PHP}: addcslashes, addslashes, bin2hex, chop, chr, chunk\_split, convert\_cyr\_string, convert\_uudecode, convert\_uuencode, count\_chars, crc32, crypt, echo, explode, fprint, get\_html\_translation\_table, hebrev, hebrevc, hex2bin, html\_entity\_decode, htmlentities, htmlspecialchars\_decode, htmlspecialchars, implode, join, lcfirst, levenshtein, localeconv, ltrim, md5, md5\_file, metaphone, money\_format, nl\_langinfo, nl2br, number\_format, ord, parse\_str, print, printf, quoted\_printable\_decode, quoted\_printable\_encode, quotemeta, rtrim, setlocale, sha1, sha1\_file, similar\_text, soundex, sprintf, sscanf, str\_getcsv, str\_ireplace, str\_pad, str\_repeat, str\_replace, str\_rot13, str\_shuffle, str\_split, str\_word\_count, strcasecmp, strchr, strcmp, strcoll, strcspn, strip\_tags, stripcslashes, stripslashes, stripos, stristr, strlen, strnatcasecmp, strnatcmp, strncasecmp, strncmp, strpbrk, strpos, strrchr, strrev, strripos, strrpos, strspn, strstr, strtok, strtolower, strtoupper, strtr, substr, substr\_compare, substr\_count, substr\_replace, trim, ucfirst, ucwords, vfprintf, vprintf, vsprintf, wordwrap.
+
+    \textbf{Rust}:
+
     \begin{table*}
         \begin{tabular}{lllllllllll}
             \hline
@@ -292,32 +318,6 @@
         \caption{String functions existing in languages}
         \label{tab:my_label}
     \end{table*}
-
-    \hl{todo String function metrics table}
-
-    Below we have a list of all string functions from the standard libraries of the specified languages.
-
-    \textbf{Java}: charAt, codePointAt, codePointBefore, codePointCount, compareTo, compareToIgnoreCase, concat, contains, contentEquals, copyValueOf, endsWith, equals, equalsIgnoreCase, format, getBytes, getChars, hashCode, indexOf, intern, isEmpty, length, lastIndexOf, length, matches, offsetByCodePoints, regionMatches, replace, replaceAll, replaceFirst, split, startsWith, subSequence, substring, toCharArray, toLowerCase, toString, toUpperCase, trim, valueOf.
-
-    \textbf{Ruby}: new, try\_convert, \%, *, +, +@, -@, <<, <=>, ==, ===, =\~, [], []=, ascii\_only?, b, bytes, bytesize, byteslice, capitalize, capitalize!, casecmp, casecmp?, center, chars, chomp, chomp!, chop, chop!, chr, clear, codepoints, concat, count, crypt, delete, delete!, delete\_prefix, delete\_prefix!, delete\_suffix, delete\_suffix!, downcase, downcase!, dump, each\_byte, each\_char, each\_codepoint, each\_grapheme\_cluster, each\_line, empty?, encode, encode!, encoding, end\_with?, eql?, force\_encoding, freeze, getbyte, grapheme\_clusters, gsub, gsub!, hash, hex, include?, index, initialize\_copy, insert, inspect, intern, length, lines, ljust, lstrip, lstrip!, match, match?, next, next!, oct, ord, partition, prepend, replace, reverse, reverse!, rindex, rjust, rpartition, rstrip, rstrip!, scan, scrub, scrub!, setbyte, size, slice, slice!, split, squeeze, squeeze!, start\_with?, strip, strip!, sub, sub!, succ, succ!, sum, swapcase, swapcase!, to\_c, to\_f, to\_i, to\_r, to\_s, to\_str, to\_sym, tr, tr!, tr\_s, tr\_s!, undump, unicode\_normalize, unicode\_normalize!, unicode\_normalized?, unpack, unpack1, upcase, upcase!, upto, valid\_encoding?.
-
-    \textbf{Python}: capitalize, casefold, center, count, encode, endswith, expandtabs, find, format, format\_map, index, isalnum, isalpha, isascii, isdecimal, isdigit, isidentifier, islower, isnumeric, isprintable, isspace, istitle, isupper, join, ljust, lower, lstrip, maketrans, partition, replace, rfind, rindex, rjust, rpartition, rsplit, rstrip, split, splitlines, startswith, strip, swapcase, title, translate, upper, zfill.
-
-    \textbf{C++}: append, assign, at, back, begin, c\_str, capacity, cbegin, cend, clear, compare, copy, crbegin, crend, data, empty, end, erase, find, find\_first\_not\_of, find\_first\_of, find\_last\_not\_of, find\_last\_of, front, get\_allocator, insert, length, max\_size, operator[], operator+=, operator=, pop\_back, push\_back, rbegin, rend, replace, reserve, resize, rfind, shrink\_to\_fit, size, substr, swap.
-
-    \textbf{JavaScript}: charAt, charCodeAt, codePointAt, concat, constructor, endsWith, fromCharCode, includes, indexOf, lastIndexOf, length, localeCompare, match, prototype, repeat, replace, search, slice, split, startsWith, substr, substring, toLocaleLowerCase, toLocaleUpperCase, toLowerCase, toString, toUpperCase, trim, valueOf.
-
-    \textbf{Go}: Clone, Compare, Contains, ContainsAny, ContainsRune, Count, Cut, EqualFold, Fields, FieldsFunc, func, HasPrefix, HasSuffix, Index, IndexAny, IndexByte, IndexFunc, func, IndexRune, Join, LastIndex, LastIndexAny, LastIndexByte, LastIndexFunc, func, Map, func, Repeat, Replace, ReplaceAll, Split, SplitAfter, SplitAfterN, SplitN, Title, ToLower, ToLowerSpecial, ToTitle, ToTitleSpecial, ToUpper, ToUpperSpecial, ToValidUTF8, Trim, TrimFunc, func, TrimLeft, TrimLeftFunc, func, TrimPrefix, TrimRight, TrimRightFunc, func, TrimSpace, TrimSuffix.
-
-    \textbf{C\#}:
-
-    Clone, CompareTo, Contains, EndsWith, Equals, GetHashCode, GetType, GetTypeCode, IndexOf, ToLower, ToUpper, Insert, IsNormalized, LastIndexOf, Remove, Replace, Split, StartsWith, Substring, ToCharArray, Trim.
-
-    \textbf{Swift}:
-
-    \textbf{PHP}:
-
-    \textbf{Rust}:
 
     \printbibliography
 
