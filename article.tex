@@ -2,6 +2,7 @@
 \settopmatter{printfolios=false,printccs=false,printacmref=false}
 \usepackage[maxnames=1,minnames=1,maxbibnames=100,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 
+\usepackage{longtable}
 \usepackage{rotating}
 \usepackage{debate}
 \usepackage{tabularx}
@@ -210,127 +211,145 @@
 
     \textbf{Rust (35)}: new, with\_capacity, from\_utf8, from\_utf8\_lossy, from\_utf16, from\_utf16\_lossy, from\_raw\_parts, from\_utf8\_unchecked, into\_bytes, as\_str, as\_mut\_str, push\_str, capacity, reserve, reserve\_exact, try\_reserve, try\_reserve\_exact, shrink\_to\_fit, shrink\_to, push, as\_bytes, truncate, pop, remove, retain, insert, insert\_str, as\_mut\_vec, len, is\_empty, split\_off, clear, drain, splice, into\_boxed\_str.
 
-    \begin{table*}
-        \begin{tabular}{lllllllllll}
-            \hline
-            & \begin{sideways}Java\end{sideways}
-            & \begin{sideways}Ruby\end{sideways}
-            & \begin{sideways}Python\end{sideways}
-            & \begin{sideways}C++\end{sideways}
-            & \begin{sideways}JavaScript\end{sideways}
-            & \begin{sideways}Go\end{sideways}
-            & \begin{sideways}C\#\end{sideways}
-            & \begin{sideways}Swift\end{sideways}
-            & \begin{sideways}PHP\end{sideways}
-            & \begin{sideways}Rust\end{sideways}
-            \\ \hline
+    \begin{longtable}{lllllllllll}
+        \hline
+        & \begin{sideways}Java\end{sideways}
+        & \begin{sideways}Ruby\end{sideways}
+        & \begin{sideways}Python\end{sideways}
+        & \begin{sideways}C++\end{sideways}
+        & \begin{sideways}JavaScript\end{sideways}
+        & \begin{sideways}Go\end{sideways}
+        & \begin{sideways}C\#\end{sideways}
+        & \begin{sideways}Swift\end{sideways}
+        & \begin{sideways}PHP\end{sideways}
+        & \begin{sideways}Rust\end{sideways}
+        \\
+        \hline
+        \endfirsthead
+        \multicolumn{11}{c}%
+        {\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+        \hline
+        & \begin{sideways}Java\end{sideways}
+        & \begin{sideways}Ruby\end{sideways}
+        & \begin{sideways}Python\end{sideways}
+        & \begin{sideways}C++\end{sideways}
+        & \begin{sideways}JavaScript\end{sideways}
+        & \begin{sideways}Go\end{sideways}
+        & \begin{sideways}C\#\end{sideways}
+        & \begin{sideways}Swift\end{sideways}
+        & \begin{sideways}PHP\end{sideways}
+        & \begin{sideways}Rust\end{sideways}
+        \\
+        \hline
+        \endhead
+        \hline \multicolumn{11}{r}{\textit{Continued on next page}} \\
+        \endfoot
+        \hline
+        \endlastfoot
+        String \textbf{capitalize} &  &  &  &  &  & &  &  & 1 & 1 \\
 
-            String \textbf{capitalize} &  &  &  &  &  & &  &  & 1 & 1 \\
+        Get \textbf{char-at} a given position &  &  &  &  &  & &  &  & 1 & 1 \\
 
-            Get \textbf{char-at} a given position &  &  &  &  &  & &  &  & 1 & 1 \\
+        Strings \textbf{compare} &  &  &  &  &  & &  &  & n & n \\
 
-            Strings \textbf{compare} &  &  &  &  &  & &  &  & n & n \\
+        Strings \textbf{compare-ignore-case} &  &  &  &  &  & &  &  &  & \\
 
-            Strings \textbf{compare-ignore-case} &  &  &  &  &  & &  &  &  & \\
+        Strings \textbf{concatenate} &  &  &  &  &  & &  &  & n & n \\
 
-            Strings \textbf{concatenate} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{containts} substring &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{containts} substring &  &  &  &  &  & &  &  & n & n \\
+        \textbf{count} of substring in string &  &  &  &  &  & &  &  &  & \\
 
-            \textbf{count} of substring in string &  &  &  &  &  & &  &  &  & \\
+        Check if \textbf{ends-with} a substring &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{ends-with} a substring &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{equals} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{equals} &  &  &  &  &  & &  &  & n & n \\
+        \textbf{find-first} substring in string &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{find-first} substring in string &  &  &  &  &  & &  &  & n & n \\
+        \textbf{find-last} substring in string &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{find-last} substring in string &  &  &  &  &  & &  &  & n & n \\
+        \textbf{format} string by regexp &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{format} string by regexp &  &  &  &  &  & &  &  & n & n \\
+        Get string \textbf{hash} &  &  &  &  &  & &  &  & n & n \\
 
-            Get string \textbf{hash} &  &  &  &  &  & &  &  & n & n \\
+        \textbf{insert} in string by index &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{insert} in string by index &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{is-alphabetic} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{is-alphabetic} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{is-empty} &  &  &  &  &  & &  &  & 1 & 1 \\
 
-            Check if \textbf{is-empty} &  &  &  &  &  & &  &  & 1 & 1 \\
+        Check if \textbf{is-hexadecimal} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{is-hexadecimal} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{is-int} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{is-int} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{is-lowercase} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{is-lowercase} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{is-uppercase} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{is-uppercase} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{is-whitespace} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{is-whitespace} &  &  &  &  &  & &  &  & n & n \\
+        \textbf{join} list of strings &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{join} list of strings &  &  &  &  &  & &  &  & n & n \\
+        Get string \textbf{length} &  &  &  &  &  & &  &  & 1 & 1 \\
 
-            Get string \textbf{length} &  &  &  &  &  & &  &  & 1 & 1 \\
+        Check if string \textbf{matches-regexp} &  &  &  &  &  & &  &  & n & n \\
 
-            Check if string \textbf{matches-regexp} &  &  &  &  &  & &  &  & n & n \\
+        Get string \textbf{partition} &  &  &  &  &  & &  &  & n & n \\
 
-            Get string \textbf{partition} &  &  &  &  &  & &  &  & n & n \\
+        \textbf{repeat} string number of times &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{repeat} string number of times &  &  &  &  &  & &  &  & n & n \\
+        \textbf{replace-all} substrings by other &  &  &  &  &  & &  &  & n & n \\
 
-            \textbf{replace-all} substrings by other &  &  &  &  &  & &  &  & n & n \\
+        \textbf{replace-first} substrings by other &  &  &  &  &  &  &  &  &  & \\
 
-            \textbf{replace-first} substrings by other &  &  &  &  &  &  &  &  &  & \\
+        String \textbf{split} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{split} &  &  &  &  &  & &  &  & n & n \\
+        Check if \textbf{starts-with} a substring &  &  &  &  &  & &  &  & n & n \\
 
-            Check if \textbf{starts-with} a substring &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{strip} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{strip} &  &  &  &  &  & &  &  & n & n \\
+        Get \textbf{substring} by positions &  &  &  &  &  & &  &  & n & 1 \\
 
-            Get \textbf{substring} by positions &  &  &  &  &  & &  &  & n & 1 \\
+        String \textbf{swap-case} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{swap-case} &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{to-float} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{to-float} &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{to-int} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{to-int} &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{to-lowercase} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{to-lowercase} &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{to-uppercase} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{to-uppercase} &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{trim-left} &  &  &  &  &  &  &  &  & n & n \\
 
-            String \textbf{trim-left} &  &  &  &  &  &  &  &  & n & n \\
+        String \textbf{trim-right} &  &  &  &  &  & &  &  & n & n \\
 
-            String \textbf{trim-righ} &  &  &  &  &  & &  &  & n & n \\
+        String \textbf{reverse} &  &  &  &  &  & &  &  & n & 1 \\
 
-            String \textbf{reverse} &  &  &  &  &  & &  &  & n & 1 \\
+        \textbf{remove} substring by positions &  &  &  &  &  & &  &  &  & \\
 
-            \textbf{remove} substring by positions &  &  &  &  &  & &  &  &  & \\
+        String \textbf{uncapitalize} &  &  &  &  &  & &  &  &  & \\
 
-            String \textbf{uncapitalize} &  &  &  &  &  & &  &  &  & \\
+        Get string \textbf{as-bytes} &  &  &  &  &  & &  &  &  & \\
 
-            Get string \textbf{as-bytes} &  &  &  &  &  & &  &  &  & \\
+        String \textbf{pop-back} &  &  &  &  &  & &  &  &  & \\
 
-            String \textbf{pop-back} &  &  &  &  &  & &  &  &  & \\
+        Get string \textbf{as-chars} &  &  &  &  &  & &  &  &  & \\
 
-            Get string \textbf{as-chars} &  &  &  &  &  & &  &  &  & \\
+        Get string \textbf{as-canonical} &  &  &  &  &  & &  &  &  & \\
 
-            Get string \textbf{as-canonical} &  &  &  &  &  & &  &  &  & \\
+        Check if \textbf{is-ascii}  &  &  &  &  &  & &  &  &  & \\
 
-            Check if \textbf{is-ascii}  &  &  &  &  &  & &  &  &  & \\
+        String \textbf{copy} &  &  &  &  &  & &  &  &  & \\
 
-            String \textbf{copy} &  &  &  &  &  & &  &  &  & \\
+        String \textbf{contains-any} &  &  &  &  &  & &  &  &  & \\
 
-            String \textbf{contains-any} &  &  &  &  &  & &  &  &  & \\
+        String \textbf{reserve-capacity} &  &  &  &  &  & &  &  &  & \\
 
-            String \textbf{reserve-capacity} &  &  &  &  &  & &  &  &  & \\
-
-            String \textbf{shrink-to-fit} &  &  &  &  &  & &  &  &  & \\ \hline
-
-        \end{tabular}
+        String \textbf{shrink-to-fit} &  &  &  &  &  & &  &  &  & \\ \hline
         \caption{String functions existing in languages}
         \label{tab:my_label}
-    \end{table*}
+    \end{longtable}
 
     \printbibliography
 
