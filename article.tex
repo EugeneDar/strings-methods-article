@@ -2,7 +2,7 @@
 \settopmatter{printfolios=false,printccs=false,printacmref=false}
 \usepackage[maxnames=1,minnames=1,maxbibnames=100,natbib=true,citestyle=authoryear,bibstyle=authoryear,doi=false,url=false,isbn=false,isbn=false]{biblatex}
 
-\usepackage{longtable}
+\usepackage{amssymb}
 \usepackage{rotating}
 \usepackage{debate}
 \usepackage{tabularx}
@@ -145,7 +145,7 @@
 
     Based on these data, we have compiled our optimal library for string functions; the included functions are listed below.
 
-    \hl{todo}
+    \hl{todo add link to parsing repo}
 
     \section{Discussion and analysis}
 
@@ -209,145 +209,71 @@
 
     \textbf{PHP (98)}: addcslashes, addslashes, bin2hex, chop, chr, chunk\_split, convert\_cyr\_string, convert\_uudecode, convert\_uuencode, count\_chars, crc32, crypt, echo, explode, fprint, get\_html\_translation\_table, hebrev, hebrevc, hex2bin, html\_entity\_decode, htmlentities, htmlspecialchars\_decode, htmlspecialchars, implode, join, lcfirst, levenshtein, localeconv, ltrim, md5, md5\_file, metaphone, money\_format, nl\_langinfo, nl2br, number\_format, ord, parse\_str, print, printf, quoted\_printable\_decode, quoted\_printable\_encode, quotemeta, rtrim, setlocale, sha1, sha1\_file, similar\_text, soundex, sprintf, sscanf, str\_getcsv, str\_ireplace, str\_pad, str\_repeat, str\_replace, str\_rot13, str\_shuffle, str\_split, str\_word\_count, strcasecmp, strchr, strcmp, strcoll, strcspn, strip\_tags, stripcslashes, stripslashes, stripos, stristr, strlen, strnatcasecmp, strnatcmp, strncasecmp, strncmp, strpbrk, strpos, strrchr, strrev, strripos, strrpos, strspn, strstr, strtok, strtolower, strtoupper, strtr, substr, substr\_compare, substr\_count, substr\_replace, trim, ucfirst, ucwords, vfprintf, vprintf, vsprintf, wordwrap.
 
-    \textbf{Rust (35)}: new, with\_capacity, from\_utf8, from\_utf8\_lossy, from\_utf16, from\_utf16\_lossy, from\_raw\_parts, from\_utf8\_unchecked, into\_bytes, as\_str, as\_mut\_str, push\_str, capacity, reserve, reserve\_exact, try\_reserve, try\_reserve\_exact, shrink\_to\_fit, shrink\_to, push, as\_bytes, truncate, pop, remove, retain, insert, insert\_str, as\_mut\_vec, len, is\_empty, split\_off, clear, drain, splice, into\_boxed\_str.
+    \textbf{Rust (105)}: new, with\_capacity, from\_utf8, from\_utf8\_lossy, from\_utf16, from\_utf16\_lossy, from\_raw\_parts, from\_utf8\_unchecked, into\_bytes, as\_str, as\_mut\_str, push\_str, capacity, reserve, reserve\_exact, try\_reserve, try\_reserve\_exact, shrink\_to\_fit, shrink\_to, push, as\_bytes, truncate, pop, remove, retain, insert, insert\_str, as\_mut\_vec, len, is\_empty, split\_off, clear, drain, splice, into\_boxed\_str, as\_bytes, as\_bytes\_mut, as\_mut\_ptr, as\_ptr, bytes, ceil\_char\_boundary, char\_indices, chars, contains, encode\_utf16, ends\_with, eq\_ignore\_ascii\_case, escape\_debug, escape\_default, escape\_unicode, find, floor\_char\_boundary, get, get\_mut, get\_unchecked, get\_unchecked\_mut, is\_ascii, is\_char\_boundary, is\_empty, len, lines, lines\_any, make\_ascii\_lowercase, make\_ascii\_uppercase, match\_indices, matches, parse, repeat, replace, replacen, rfind, rmatch\_indices, rmatches, rsplit, rsplit\_once, rsplit\_terminator, rsplitn, slice\_mut\_unchecked, slice\_unchecked, split, split\_ascii\_whitespace, split\_at, split\_at\_mut, split\_inclusive, split\_once, split\_terminator, split\_whitespace, splitn, starts\_with, strip\_prefix, strip\_suffix, to\_ascii\_lowercase, to\_ascii\_uppercase, to\_lowercase, to\_uppercase, trim, trim\_end, trim\_end\_matches, trim\_left, trim\_left\_matches, trim\_matches, trim\_right, trim\_right\_matches, trim\_start, trim\_start\_matches.
 
-    \begin{longtable}{lllllllllll}
-        \hline
-        & \begin{sideways}Java\end{sideways}
-        & \begin{sideways}Ruby\end{sideways}
-        & \begin{sideways}Python\end{sideways}
-        & \begin{sideways}C++\end{sideways}
-        & \begin{sideways}JavaScript\end{sideways}
-        & \begin{sideways}Go\end{sideways}
-        & \begin{sideways}C\#\end{sideways}
-        & \begin{sideways}Swift\end{sideways}
-        & \begin{sideways}PHP\end{sideways}
-        & \begin{sideways}Rust\end{sideways}
-        \\
-        \hline
-        \endfirsthead
-        \multicolumn{11}{c}%
-        {\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-        \hline
-        & \begin{sideways}Java\end{sideways}
-        & \begin{sideways}Ruby\end{sideways}
-        & \begin{sideways}Python\end{sideways}
-        & \begin{sideways}C++\end{sideways}
-        & \begin{sideways}JavaScript\end{sideways}
-        & \begin{sideways}Go\end{sideways}
-        & \begin{sideways}C\#\end{sideways}
-        & \begin{sideways}Swift\end{sideways}
-        & \begin{sideways}PHP\end{sideways}
-        & \begin{sideways}Rust\end{sideways}
-        \\
-        \hline
-        \endhead
-        \hline \multicolumn{11}{r}{\textit{Continued on next page}} \\
-        \endfoot
-        \hline
-        \endlastfoot
-        String \textbf{capitalize} & No & Yes &  &  &  & &  &  & 1 & 1 \\
-
-        Get \textbf{char-at} a given position & Yes & Yes &  &  &  & &  &  & 1 & 1 \\
-
-        Strings \textbf{compare} & Yes & No &  &  &  & &  &  & n & n \\
-
-        Strings \textbf{compare-ignore-case} & Yes &  &  &  &  & &  &  &  & \\
-
-        Strings \textbf{concatenate} & Yes & No &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{contains} substring & Yes & No &  &  &  & &  &  & n & n \\
-
-        \textbf{count} of substring in string & No & Yes &  &  &  & &  &  &  & \\
-
-        Check if \textbf{ends-with} a substring & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{equals} & Yes & No &  &  &  & &  &  & n & n \\
-
-        \textbf{find-first} substring in string & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        \textbf{find-last} substring in string & Yes & No &  &  &  & &  &  & n & n \\
-
-        \textbf{format} string by regexp & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        Get string \textbf{hash} & Yes & No &  &  &  & &  &  & n & n \\
-
-        \textbf{insert} in string by index & No & No &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{is-alphabetic} & No & Yes &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{is-empty} & Yes & Yes &  &  &  & &  &  & 1 & 1 \\
-
-        Check if \textbf{is-hexadecimal} & No & No &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{is-int} & No & Yes &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{is-lowercase} & No & Yes &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{is-uppercase} & No & Yes &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{is-whitespace} & No & Yes &  &  &  & &  &  & n & n \\
-
-        \textbf{join} list of strings & No & Yes &  &  &  & &  &  & n & n \\
-
-        Get string \textbf{length} & Yes & No &  &  &  & &  &  & 1 & 1 \\
-
-        Check if string \textbf{matches-regexp} & Yes & No &  &  &  & &  &  & n & n \\
-
-        Get string \textbf{partition} & No & Yes &  &  &  & &  &  & n & n \\
-
-        \textbf{repeat} string number of times & No & No &  &  &  & &  &  & n & n \\
-
-        \textbf{replace-all} substrings by other & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        \textbf{replace-first} substrings by other & Yes & Yes &  &  &  &  &  &  &  & \\
-
-        String \textbf{split} & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        Check if \textbf{starts-with} a substring & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        String \textbf{strip} & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        Get \textbf{substring} by positions & Yes & No &  &  &  & &  &  & n & 1 \\
-
-        String \textbf{swap-case} & No & Yes &  &  &  & &  &  & n & n \\
-
-        String \textbf{to-float} & No & No &  &  &  & &  &  & n & n \\
-
-        String \textbf{to-int} & No & No &  &  &  & &  &  & n & n \\
-
-        String \textbf{to-lowercase} & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        String \textbf{to-uppercase} & Yes & Yes &  &  &  & &  &  & n & n \\
-
-        String \textbf{trim-left} & No & Yes &  &  &  &  &  &  & n & n \\
-
-        String \textbf{trim-right} & No & Yes &  &  &  & &  &  & n & n \\
-
-        \textbf{remove} substring by positions & No & No &  &  &  & &  &  &  & \\
-
-        String \textbf{uncapitalize} & No & No &  &  &  & &  &  &  & \\
-
-        Get string \textbf{as-bytes} & Yes & No &  &  &  & &  &  &  & \\
-
-        String \textbf{pop-back} & No & No &  &  &  & &  &  &  & \\
-
-        Get string \textbf{as-chars} & Yes & No &  &  &  & &  &  &  & \\
-
-        Get string \textbf{as-canonical} & Yes & No &  &  &  & &  &  &  & \\
-
-        Check if \textbf{is-ascii} & No & Yes &  &  &  & &  &  &  & \\
-
-        String \textbf{copy} & Yes & No &  &  &  & &  &  &  & \\
-
-        String \textbf{contains-any} & No & No &  &  &  & &  &  &  & \\
-
-        String \textbf{reserve-capacity} & No & No &  &  &  & &  &  &  & \\
-
-        String \textbf{shrink-to-fit} & No & No &  &  &  & &  &  &  & \\ \hline
+    \begin{table*}
+        \begin{tabular}{lllllllllll}
+            \hline
+            & \begin{sideways}Java\end{sideways}
+            & \begin{sideways}Ruby\end{sideways}
+            & \begin{sideways}Python\end{sideways}
+            & \begin{sideways}C++\end{sideways}
+            & \begin{sideways}JavaScript\end{sideways}
+            & \begin{sideways}Go\end{sideways}
+            & \begin{sideways}C\#\end{sideways}
+            & \begin{sideways}Swift\end{sideways}
+            & \begin{sideways}PHP\end{sideways}
+            & \begin{sideways}Rust\end{sideways}
+            \\ \hline
+            String \textbf{capitalize} & & $\checkmark$ & & $\checkmark$ & & $\checkmark$ & & $\checkmark$ & $\checkmark$ & \\
+            Get \textbf{char-at} a given position & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & $\checkmark$ & & $\checkmark$ \\
+            Strings \textbf{compare} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \\
+            Strings \textbf{compare-ignore-case} & $\checkmark$ & & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & $\checkmark$ & \\
+            Strings \textbf{concatenate} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            Check if \textbf{contains} substring & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            \textbf{count} of substring in string & & $\checkmark$ & & $\checkmark$ & & $\checkmark$ & & & $\checkmark$ & \\
+            Check if \textbf{ends-with} a substring & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            Check if \textbf{equals} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            \textbf{find-first} substring in string & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            \textbf{find-last} substring in string & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            \textbf{format} string by regexp & $\checkmark$ & $\checkmark$ & & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & & \\
+            Get string \textbf{hash} & $\checkmark$ & $\checkmark$ & & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & & $\checkmark$ \\
+            \textbf{insert} in string by index & $\checkmark$ & & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & & $\checkmark$ \\
+            Check if \textbf{is-alphabetic} & $\checkmark$ & $\checkmark$ & $\checkmark$ & & & & & & & \\
+            Check if \textbf{is-empty} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & & $\checkmark$ \\
+            Check if \textbf{is-whitespace} & & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & & & \\
+            \textbf{join} list of strings & & $\checkmark$ & & & & $\checkmark$ & $\checkmark$ & & $\checkmark$ & \\
+            Get string \textbf{length} & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            Check if string \textbf{matches-regexp} & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & & & & & \\
+            Get string \textbf{partition} & & $\checkmark$ & & $\checkmark$ & & $\checkmark$ & & & & \\
+            \textbf{repeat} string number of times & & & & & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & $\checkmark$ \\
+            \textbf{replace-all} substrings by other & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            \textbf{replace-first} substrings by other & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & & & & $\checkmark$ \\
+            String \textbf{split} & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            Check if \textbf{starts-with} a substring & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            String \textbf{strip} & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            Get \textbf{substring} by positions & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            String \textbf{to-float} & & & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & & \\
+            String \textbf{to-int} & & & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & & \\
+            String \textbf{to-lowercase} & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            String \textbf{to-uppercase} & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+            String \textbf{trim-left} & & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ \\
+            String \textbf{trim-right} & & $\checkmark$ & & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & & $\checkmark$ & $\checkmark$ \\
+            \textbf{remove} substring by positions & & & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & & $\checkmark$ \\
+            Get string \textbf{as-bytes} & & $\checkmark$ & & $\checkmark$ & & & & & & $\checkmark$ \\
+            String \textbf{pop-back} & & & $\checkmark$ & $\checkmark$ & & & & $\checkmark$ & & $\checkmark$ \\
+            Get string \textbf{as-chars} & $\checkmark$ & & & $\checkmark$ & & & $\checkmark$ & & & $\checkmark$ \\
+            Get string \textbf{as-canonical} & $\checkmark$ & & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & & & \\
+            Check if \textbf{is-ascii} & & $\checkmark$ & & $\checkmark$ & & & & & & $\checkmark$ \\
+            String \textbf{copy} & $\checkmark$ & & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & & & \\
+            String \textbf{reserve-capacity} & & & $\checkmark$ & & & & & $\checkmark$ & & $\checkmark$ \\
+            String \textbf{reverse} & & $\checkmark$ & & $\checkmark$ & $\checkmark$ & & & $\checkmark$ & $\checkmark$ & \\
+            \\ \hline
+        \end{tabular}
         \caption{String functions existing in languages}
         \label{tab:my_label}
-    \end{longtable}
+    \end{table*}
+
 
     \printbibliography
 
